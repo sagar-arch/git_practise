@@ -1,2 +1,6 @@
 -------------------gitversion1----------------
 --------------putting git stash------------
+
+----------changes made in chd1 and to be merged to master---------------------------
+
+----------changes made in master branch---------------------
