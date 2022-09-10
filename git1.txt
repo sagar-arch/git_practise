@@ -8,6 +8,24 @@
 <<<<<<< HEAD
 
 ------this changes are done in chd1 ------------
+<<<<<<< HEAD
 =======
 -----------this changes are made in master branch----------
 >>>>>>> d815dc5 (changes are done in master branch)
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+----------new chenge	
+-------second changes---------
+
+>>>>>>> chd1
