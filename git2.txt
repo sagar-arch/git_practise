@@ -1,3 +1,4 @@
 This changes is done in new branch
 
 --new in feature2
+--again in feature 2 to create a permanent branch
