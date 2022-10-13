@@ -1,6 +1,6 @@
 #To check first github actions command on push
 
-name: shell-command
+name: shell-commands
 on: [push]
 
 jobs:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo-a-string
-        run: echo "helloworld"
+        run: echoa "helloworld"
       - name: multiline
         run: |
           node -v
