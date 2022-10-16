@@ -20,4 +20,14 @@ jobs:
           import platform
           print(platform.processor)
         shell: python
-          
+# Two different jobs will run in parallel
+  run-windows-command:
+    runs-on: windows-latest
+    steps:
+      - name: Directory Power shell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash  
+
+
