@@ -16,3 +16,15 @@ jobs:
         run: |
           pwd
           ls -a
+      - name: Fetch some enviornment variable
+      # $GITHUB_SHA  --> Return UserID
+      # $GITHUB_REPOSITORY  --> Return Repo name
+      # $GITHUB_WORKSPACE --> Return WorkSpace name
+      # $github.token --> Return Token of the account
+        run: |
+          pwd
+          ls -a 
+          echo $GITHUB_SHA    
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}" 
