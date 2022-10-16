@@ -4,8 +4,15 @@ jobs:
   list-path:
     runs-on: ubuntu-latest
     steps:
-      - name: listfiles
+      - name: Before checkout listfiles
         run: |
           pwd
-          ls
-
+          ls -a
+      - name: checkout test # this will act on the keyword action--> CHECK OUT TO SPECIFIC COMMIT
+        # instead of run use the "uses" keyword which will fetch the repo/user and assing it to your on going commit
+        # uses: actions/yourrepo_name
+        uses: actions/checkout@v1
+      - name: After checkout listfiles
+        run: |
+          pwd
+          ls -a
