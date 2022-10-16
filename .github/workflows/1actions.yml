@@ -1,0 +1,22 @@
+name: Actions-Workflow
+on: [push]
+
+jobs:
+  jn-run-github-action:
+
+# this file will actually referencing either to the code path in your pc or the github address in you github account
+# and then it will runs whats in it
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple js actions
+      # by giving id we can reference this steps
+        id: greet
+      # Below -> username/reponame@branchname or verions name or commit id
+        uses: actions/hello-world-javascript-action@v1
+      # Also the action might need some input and we do that via with command
+        with:
+          who-to-greet: sagar nigam  # this who-to-greet is the input asxked in above repo
+      # Apart from giving input we can also get the output
+      - name: Log Greeting Time
+      # The output of the steps can be seen in the documentation here we use time
+        run: echo "${{ steps.greet.outputs.time }}"
