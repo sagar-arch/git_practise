@@ -1,0 +1,11 @@
+name: list path and file within input
+on: [push]
+jobs:
+  list-path:
+    runs-on: ubuntu-latest
+    steps:
+      - name: listfiles
+        run: |
+          pwd
+          ls
+
