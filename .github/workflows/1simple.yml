@@ -21,8 +21,21 @@ jobs:
           print(platform.processor)
         shell: python
 # Two different jobs will run in parallel
-  run-windows-command:
+# Here the jobs will rnu in parallel
+  run-windows-command-parallel:
     runs-on: windows-latest
+    steps:
+      - name: Directory Power shell
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd
+        shell: bash  
+# But in case you want 2nd jobs to dependent on previous job
+# then you need to serialize the jobs run and add 
+#dependencies using needs Key
+  run-windows-command-series:
+    runs-on: windows-latest
+    needs: ['run-shell-command','run-windows-command-parallel']
     steps:
       - name: Directory Power shell
         run: Get-Location
