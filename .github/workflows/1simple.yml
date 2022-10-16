@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo-a-string
-        run: echoa "helloworld"
+        run: echo "helloworld"
       - name: multiline
         run: |
           node -v
