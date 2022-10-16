@@ -13,3 +13,11 @@ jobs:
         run: |
           node -v
           npm -v
+# To use different lang
+
+      - name: use-python
+        run: |
+          import platform
+          print(platform.processor)
+        shell: python
+          
