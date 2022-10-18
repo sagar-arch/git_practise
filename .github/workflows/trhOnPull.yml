@@ -1,0 +1,9 @@
+name: Action on pull request
+on: [pull_request]
+
+jobs:
+  actOnPullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: actNow on pull
+        run: "This is run when the pull request submission happened"
