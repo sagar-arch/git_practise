@@ -1,0 +1,18 @@
+name: On API Trigger from postman
+# on: [pull_request] instead of passing as an array you can also do as below
+on:
+  repository_dispatch:
+  type: [buildme]
+  # schedule:
+  #   - cron: "14 8 * * *"
+  #   - cron: "15 8 * * *"
+  # push:
+  # pull_request:
+  #   types: [closed,opened,assigned]
+
+jobs:
+  actOnDispatchRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: actNow on pull
+        run: echo "This is run when the pull request submission happened"
