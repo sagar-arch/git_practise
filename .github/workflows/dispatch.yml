@@ -14,5 +14,7 @@ jobs:
   actOnDispatchRequest:
     runs-on: ubuntu-latest
     steps:
+      - name: payload_parser
+        run: echo ${{github.event.client_payload.env}}
       - name: actNow on Dispatch
         run: echo "This is run when the pull request submission happened"
