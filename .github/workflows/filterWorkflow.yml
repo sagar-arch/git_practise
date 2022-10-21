@@ -1,0 +1,18 @@
+name: FilterWorkflow
+
+on:
+  push:
+    branches:               # Filter on the basis of branches
+      - main                         #Specify a particular branch when that is Pushed and some goes for Pull Request
+      - "feature/*"                  # Specify the partern but in Quotes Like feature/f1, feature/f2 but will not match with feature/f3/fa * don't cross / But to match feature/f3/fa then do it by feature/** -->** will pass /
+    
+    # There is some thing called BRANCHES IGNORE to list the branch to be ignored but both branches and branches ignoer can not be together
+      - "!feature/featc"    # This will ignore the feature/featc 
+    tags:
+      - v1
+      - v2.*  # some pattern
+      # Again there is something called tags_ignore
+    paths: 
+      - '**.js' # Will only match any javascipt file means this workflow will only run when you push java script file
+      # Again we have paths_ignore      
+
