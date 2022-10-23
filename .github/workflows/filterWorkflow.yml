@@ -1,5 +1,4 @@
 name: FilterWorkflow
-
 on:
   push:
     branches:               # Filter on the basis of branches
