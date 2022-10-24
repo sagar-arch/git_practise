@@ -7,7 +7,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v1
       - name: Decrpt file
-        run: gpg --quiet --batch --yes --decrypt --passphares="$PASSPHARES" --output $HOME/secret.json secret.json.gpg
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHARES" --output $HOME/secret.json secret.json.gpg
         env: 
           PASSPHARES: ${{secrets.PASSPHARES}}
       - name : print file contect
