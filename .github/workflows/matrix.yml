@@ -14,7 +14,7 @@ jobs:
           - os: ubuntu-latest
             node-version: 7
           - os: windows-latest
-            node-versions: 6
+            node-version: 6
     env: 
       in_mac_7: ${{matrix.in_mac_7}}
     runs-on: ${{matrix.os}}
