@@ -4,6 +4,7 @@ on: push
 jobs:
   funtions:
     runs-on: ubuntu-latest
+    if : github.event_name == "pull"
     steps:
       - name: dump 
         run: |
@@ -11,19 +12,22 @@ jobs:
           echo ${{startsWith('hello','he')}}
           echo ${{endsWith('hello', 'lo')}}
           echo ${{format('hello {0} {1} {2}','world','!','!')}}
-  # dump_contexts_to_log:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Dump GitHub context
-  #       id: github_context_step
-  #       run: echo '${{ toJSON(github) }}'
-  #     - name: Dump job context
-  #       run: echo '${{ toJSON(job) }}'
-  #     - name: Dump steps context
-  #       run: echo '${{ toJSON(steps) }}'
-  #     - name: Dump runner context
-  #       run: echo '${{ toJSON(runner) }}'
-  #     - name: Dump strategy context
-  #       run: echo '${{ toJSON(strategy) }}'
-  #     - name: Dump matrix context
-  #       run: echo '${{ toJSON(matrix) }}'
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    if : github.event_name == "push"
+    steps:
+      - name: Dump GitHub context
+        id: github_context_step
+        run: ec2ho '${{ toJSON(github) }}'
+      - name: Dump job context
+        if: failure()                  # If previous job fails, success()--> if previous job is success, always() --> no matter what it will run, cancel() --> if cancel
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        if: always()
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
