@@ -1,4 +1,4 @@
-name: Context testing with fucntions
+name: check if usage
 on: push
 
 jobs:
