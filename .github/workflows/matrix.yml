@@ -1,13 +1,17 @@
-name: set up node
+name: inclued matrix to run multiple env
 on: ['push']
 jobs:
   node-version:
+    strategy:
+      matrix:
+        os: [macos-latest,ubuntu-latest,windows-latest]
+        node_version: [6,7]   # so now total number of run will be 6 every os with every node version
     runs-on: ubuntu-latest
     steps:
       - name: log node node-version 
         run: node -v 
       - uses: actions/setup-node@v1
         with:
-          node-version: 6
+          node-version: ${{matrix.nodeversion}}
       - name: log node node-version
         run: node -v
