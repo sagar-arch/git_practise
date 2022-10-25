@@ -6,9 +6,9 @@ jobs:
       matrix:
         os: [macos-latest,ubuntu-latest,windows-latest]
         node_version: [6,7]   # so now total number of run will be 6 every os with every node version
-        inclued:
+        include:
           - os: macos-latest
-            node-verions: 7
+            node-verion: 7
             in_mac_7: "Yes Sagar!"
         exclude: 
           - os: ubuntu-latest
