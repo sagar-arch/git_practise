@@ -8,7 +8,7 @@ jobs:
         node_version: [6,7]   # so now total number of run will be 6 every os with every node version
         include:
           - os: macos-latest
-            node-verion: 7
+            node-version: 7
             in_mac_7: "Yes Sagar!"
         exclude: 
           - os: ubuntu-latest
