@@ -6,7 +6,7 @@ jobs:
       matrix:
         os: [macos-latest,ubuntu-latest,windows-latest]
         node_version: [6,7]   # so now total number of run will be 6 every os with every node version
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     steps:
       - name: log node node-version 
         run: node -v 
