@@ -4,7 +4,7 @@ on: push
 jobs:
   funtions:
     runs-on: ubuntu-latest
-    if : github.event_name == "pull"
+    if : github.event_name == "push"
     steps:
       - name: dump 
         run: |
