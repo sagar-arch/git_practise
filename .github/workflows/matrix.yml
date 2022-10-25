@@ -1,0 +1,12 @@
+name: set up node
+jobs:
+  node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: log node node-version 
+        run: node -v 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 6
+      - name: log node node-version
+        run: node -v
