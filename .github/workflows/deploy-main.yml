@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy-main-to-dev:
-    uses: /.github/workflows/shared-workflow.databricks.deploy.yml
+    uses: ./shared-workflow.databricks.deploy.yml@main
     with:
       DATABRICKS_HOST: HOST_URL
       DATABRICKS_MANAGED_DIRECTORY: "/BrandPulse"
