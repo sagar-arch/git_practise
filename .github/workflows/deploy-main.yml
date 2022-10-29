@@ -1,0 +1,19 @@
+#Deploy the databricks note book to main branch
+name: deploy-to-main
+on:
+  #Trigger workflow on push or pull request but only for main branch
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [mian]
+  workflow_dispatch:
+
+jobs:
+  deploy-main-to-dev:
+    uses: /.github/workflows/shared-workflow.databricks.deploy.yml
+    with:
+      DATABRICKS_HOST: HOST_URL
+      DATABRICKS_MANAGED_DIRECTORY: "/BrandPulse"
+      ENVIRONMENT: dev
+    secrets:
+      DATABRICKS_TOKEN: ${{secrects.DATABRICKS_TOKEN}}

@@ -1,0 +1,15 @@
+{
+    "name": "dev-main-stack",
+    "resources": [
+        {
+            "id": "sample-test",
+            "service": "workspace",
+            "properties":{
+                "source_path": "./sample-test.py",
+                "path" : "/brandpulse/test",
+                "object_type": "NOTEBOOK"
+            }
+            
+        }
+    ]
+}
